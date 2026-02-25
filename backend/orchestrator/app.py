@@ -18,7 +18,7 @@ os.makedirs(PDF_DIR, exist_ok=True)
 app = FastAPI(title="Multi-Level RAG Orchestrator Agent", version="1.0.0")
 
 
-allowed_origins = getattr(config, "ALLOWED_ORIGINS", ["*"])
+allowed_origins = getattr(config, "ALLOWED_ORIGINS", ["*", "http://localhost:3000"])
 app.add_middleware(
     CORSMiddleware,
     allow_origins=allowed_origins,
